@@ -105,7 +105,7 @@ def apc(hash):
             p += chr(randint(33, 126));
             p = p[0:length];
             
-        done += (str(count) + '. ' + p + '\n').replace('\\', '');
+        done += (str(count) + '. ' + p + '\n').replace('\\', '').replace('<', '').replace('>', '');
         count += 1;
     
     text_output1.configure(state = 'normal');
