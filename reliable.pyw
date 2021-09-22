@@ -21,7 +21,8 @@ from tkinter import *;
 from tkinter import ttk;
 from tkinter.filedialog import *; # Call open file window
 from pyperclip import copy; # Copy text (HEX, DEC)
-from sys import exit;
+import sys;
+from os import path;
 from subprocess import call;
 from hashlib import sha256;
 from random import randint, seed;
@@ -29,8 +30,8 @@ import ctypes;
 
 call('taskkill /f /im reliable.exe', shell = True);
 
-myappid = 'fedoregorov.reliable.1.0' # arbitrary string
-ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+myappid = 'fedoregorov.reliable.1.1' # arbitrary string
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid);
 
 def geometry(window_width, window_height):
     global window;
@@ -44,7 +45,7 @@ def geometry(window_width, window_height):
     window.resizable(width=False, height=False);
 
 def on_close():
-    exit();
+    sys.exit();
     # subprocess.call('taskkill /f /im hexdec.exe & taskkill /f /im python.exe & taskkill /f /im pythonw.exe', shell=True);
 
 def _onKeyRelease(event): # Author: sergey.s1, Stack Overflow.
@@ -127,7 +128,10 @@ Tk().withdraw();
 window = Tk();
 geometry(715, 300);
 window.title('Reliable');
-window.iconbitmap('resources/logo.ico');
+try:
+    window.iconbitmap(path.dirname(sys.executable) + '\\resources\\logo.ico');
+except:
+    window.iconbitmap('resources/logo.ico');
 
 show_hide_button = ttk.Button(window, text = 'Show', command = toggle_password);
 show_hide_button.grid(row = 1, column = 1, padx = (25, 0), pady = (15, 0));
