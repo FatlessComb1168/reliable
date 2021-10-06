@@ -16,6 +16,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Reliable. If not, see <https://www.gnu.org/licenses/>.
 '''
+
 try:
     from tkinter import *;
     from tkinter import ttk;
@@ -183,9 +184,8 @@ try:
     warning = Label(f1, text = 'ATTENTION: REMEMBER YOUR MASTER PASSWORD FOR LIFE AND NEVER ENTRUST IT TO OTHER PEOPLE,', fg='#f00');
     warning.place(x = 10, y = 340);
 
-    warning = Label(f1, text = 'UNLESS THEY ARE YOUR CONFIDANTS OR RELATIVES!', fg='#f00');
+    warning = Label(f1, text = 'UNLESS THEY ARE YOUR CONFIDANTS OR RELATIVES! CREATE A NEW PASSWORD THAT YOU HAVE NEVER USED BEFORE', fg='#f00');
     warning.place(x = 10, y = 360);
-    window.protocol('WM_DELETE_WINDOW', on_close);
 
 
     # ABOUT THE PROGRAM
@@ -236,6 +236,8 @@ try:
     licensed3.place(x = 140 + ix, y = 250 - iy);   
     licensed3.configure(underline = True); 
     licensed3.bind("<Button-1>", lambda e: open_site("https://github.com/FatlessComb1168/reliable"));
+
+    window.protocol('WM_DELETE_WINDOW', on_close);
 
     window.mainloop();
 except Exception as e:
