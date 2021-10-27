@@ -23,7 +23,6 @@ from os import system;
 import ctypes;
 
 ctypes.windll.kernel32.SetConsoleTitleW('Reliable');
-system('mode 120, 32');
 
 def apc(hash):
     hash = sha256(bytes(hash, encoding = 'utf-8')).hexdigest();
@@ -65,13 +64,14 @@ def apc(hash):
     
     return done[0:-1];
 
-while True:
+_exit = True;
+while _exit:
     a = input('Welcome to Reliable!\n0 - Generate a set of passwords\n1 - Exit\n');
     if a == '0':
         a = (input('Enter a master-password: '));
         system('cls');
         input(apc(a) + '\n' + 'Enter to continue...');
     if a == '1':
-        break;
+        _exit = False;
     else:
         system('cls');
