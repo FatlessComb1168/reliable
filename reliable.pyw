@@ -1,6 +1,6 @@
 '''
 Reliable.
-Copyright (C) 2021 by Fedor Egorov <fedoregorov1@yandex.ru>
+Copyright (C) 2021 by Fedor Egorov
 This file is part of Reliable.
 
 Reliable is free software: you can redistribute it and/or modify
@@ -210,13 +210,13 @@ try:
     version = Label(f2, text = 'Version 1.13', font = 'Arial 10');
     version.place(x = 140 + ix, y = 110 - iy);
 
-    author = Label(f2, text = 'Author: Fedor Egorov (FatlessComb1168)', font = 'Arial 10');
+    author = Label(f2, text = 'Author: Fedor Egorov (Axelblatt)', font = 'Arial 10');
     author.place(x = 140 + ix, y = 130 - iy);
 
     author_github = Label(f2, text = '(GitHub)', font = 'Arial 10', fg = "blue", cursor = "hand2");
     author_github.place(x = 383 + ix, y = 130 - iy);
     author_github.configure(underline = True);
-    author_github.bind("<Button-1>", lambda e: open_site("https://github.com/FatlessComb1168"));
+    author_github.bind("<Button-1>", lambda e: open_site("https://github.com/axelblatt"));
 
     licensed = Label(f2, text = 'The program is distributed under the GNU Public License,', font = 'Arial 10');
     licensed.place(x = 140 + ix, y = 160 - iy);
@@ -232,7 +232,7 @@ try:
     github = Label(f2, text = 'See project on GitHub: ', font = 'Arial 10');
     github.place(x = 140 + ix, y = 230 - iy);
 
-    licensed3 = Label(f2, text = 'https://github.com/FatlessComb1168/reliable', fg = "blue", cursor = "hand2", font = 'Arial 10');
+    licensed3 = Label(f2, text = 'https://github.com/axelblatt/reliable', fg = "blue", cursor = "hand2", font = 'Arial 10');
     licensed3.place(x = 140 + ix, y = 250 - iy);   
     licensed3.configure(underline = True); 
     licensed3.bind("<Button-1>", lambda e: open_site("https://github.com/FatlessComb1168/reliable"));
